@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Vladislav Gimadiev : CV</title>
+    <style>
+        /* ===== Variables ===== */
+        :root {
+            --bg: #f3f5f8;
+            --page: #fff;
+            --text: #111827;
+            --muted: #4b5563;
+            --soft: #6b7280;
+            --line: #d9e0ea;
+            --accent: #0f766e;
+            --accent-soft: #e6fffb;
+            --chip-bg: #eef6f5;
+        }
+
+        /* ===== Reset & Base ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            line-height: 1.38;
+        }
+
+        body {
+            padding: 16px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .article-link {
+            color: var(--accent);
+            font-weight: inherit;
+            text-decoration: none;
+        }
+
+        /* ===== Page ===== */
+        .page {
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--page);
+            box-shadow: 0 18px 40px rgba(17, 24, 39, .12);
+            padding: 17mm 15mm 14mm;
+            position: relative;
+        }
+
+        /* ===== Top bar ===== */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+
+        .name-group {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .name {
+            margin: 0;
+            font-size: 29px;
+            line-height: 1.05;
+            letter-spacing: -.03em;
+            font-weight: 800;
+        }
+
+        .role {
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: .02em;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7px 11px;
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            background: #fff;
+            color: var(--accent);
+            font-size: 11.2px;
+            font-weight: 700;
+            line-height: 1.2;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: border-color .2s, color .2s, background .2s;
+        }
+
+        .action-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        /* ===== Contact ===== */
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 14px;
+            align-items: baseline;
+            margin: 4px 0 14px;
+            font-size: 11.1px;
+            color: var(--muted);
+            overflow: hidden;
+        }
+
+        .contact-row {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .contact-tag {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        /* ===== Summary ===== */
+        .summary {
+            margin: 10px 0 14px;
+            font-size: 12.2px;
+            line-height: 1.46;
+            color: var(--muted);
+        }
+
+        /* ===== Sections ===== */
+        .section {
+            margin-top: 16px;
+            padding-top: 11px;
+            border-top: 1px solid var(--line);
+        }
+
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section-title {
+            margin: 0 0 9px;
+            font-size: 11px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ===== Blocks ===== */
+        .block {
+            margin-bottom: 13px;
+            break-inside: avoid;
+        }
+
+        .block:last-child {
+            margin-bottom: 0;
+        }
+
+        .company-head,
+        .item-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .company-title {
+            margin: 0;
+            font-size: 13.5px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .item-title {
+            margin: 0;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .item-meta {
+            margin: 0;
+            font-size: 11.1px;
+            color: var(--soft);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .item-sub,
+        .small {
+            margin: 0 0 5px;
+            font-size: 11.2px;
+            color: var(--muted);
+        }
+
+        .project-intro {
+            margin: 6px 0;
+            font-size: 11.2px;
+            color: var(--text);
+        }
+
+        .role-block {
+            margin-top: 12px;
+        }
+
+        /* ===== Lists ===== */
+        ul {
+            margin: 6px 0 0;
+            padding-left: 18px;
+            display: grid;
+            gap: 4.5px;
+        }
+
+        li {
+            font-size: 11.2px;
+            color: var(--text);
+            overflow-wrap: anywhere;
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        /* ===== Chips ===== */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .chip {
+            padding: 4px 7px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--chip-bg);
+            color: var(--text);
+            font-size: 10.4px;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        /* ===== Footer ===== */
+        .footer-line {
+            margin-top: 18px;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #0f766e 0%, #0f766e 38%, #2563eb 38%, #2563eb 68%, #7c3aed 68%, #7c3aed 100%);
+        }
+
+        /* ===== Print ===== */
+        @page {
+            size: A4;
+            margin: 8mm;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 760px) {
+            body {
+                padding: 0;
+            }
+            .page {
+                max-width: none;
+                box-shadow: none;
+                padding: 24px 18px;
+            }
+            .topbar {
+                flex-direction: column;
+            }
+            .header-actions {
+                justify-content: flex-start;
+            }
+            .contact-row {
+                white-space: normal;
+            }
+        }
+
+        @media print {
+            html,
+            body {
+                background: #fff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                margin: 0;
+                padding: 0;
+                font-size: 8pt;
+                line-height: 1.2;
+            }
+            .page {
+                max-width: none;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 2mm;
+                box-shadow: none;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            a {
+                text-decoration: none;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .name {
+                font-size: 20pt;
+            }
+            .role {
+                font-size: 9pt;
+                margin-top: 3px;
+            }
+            .summary {
+                font-size: 8pt;
+                margin: 3px 0 4px;
+                line-height: 1.2;
+            }
+            .section-title {
+                font-size: 7.5pt;
+                margin-bottom: 3px;
+                padding-top: 4px;
+            }
+            .company-title {
+                font-size: 9pt;
+            }
+            .item-title {
+                font-size: 8.5pt;
+            }
+            .item-meta {
+                font-size: 7.5pt;
+            }
+            .item-sub,
+            .project-intro,
+            .small {
+                font-size: 7.5pt;
+                margin-bottom: 1px;
+            }
+            li {
+                font-size: 7.5pt;
+            }
+            .contact-list {
+                font-size: 7.5pt;
+                margin: 2px 0 4px;
+                gap: 3px 8px;
+            }
+            .block {
+                margin-bottom: 3px;
+            }
+            .role-block {
+                margin-top: 3px;
+            }
+            .section {
+                margin-top: 3px;
+                padding-top: 3px;
+                border-top-width: .5px;
+            }
+            ul {
+                margin: 2px 0 0;
+                padding-left: 12px;
+                gap: 1.5px;
+            }
+            .footer-line {
+                margin-top: 4px;
+                height: 2px;
+            }
+            .chips {
+                display: block;
+                margin: 0;
+                padding: 0;
+                font-size: 7.5pt;
+                line-height: 1.4;
+            }
+            .chip {
+                display: inline;
+                padding: 0;
+                background: transparent !important;
+                font-size: 7.5pt;
+                font-weight: 400;
+                border: none !important;
+                border-radius: 0;
+                margin: 0;
+            }
+            .chip:not(:last-child)::after {
+                content: ', ';
+            }
+            .block,
+            .role-block,
+            .section,
+            .company-head,
+            .item-head,
+            ul,
+            p,
+            .summary,
+            .project-intro {
+                page-break-inside: avoid;
+                orphans: 2;
+                widows: 2;
+            }
+            .section-title,
+            .company-title,
+            .item-title {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<article class="page">
+
+    <!-- ===== Top Bar ===== -->
+    <div class="topbar">
+        <div class="name-group">
+            <h1 class="name" data-i18n="name">Владислав Гимадиев</h1>
+            <div class="role" data-i18n="role">Senior Frontend Developer</div>
+        </div>
+        <div class="header-actions no-print">
+            <button class="action-btn" id="langToggle" type="button">English</button>
+            <button class="action-btn" id="pdfDownloadBtn" type="button">Скачать PDF</button>
+        </div>
+    </div>
+
+    <!-- ===== Contact ===== -->
+    <div class="contact-list">
+        <div class="contact-row">
+            <span class="contact-tag" data-i18n="tg_label">TG</span>
+            <span>@vlaad_g</span>
+        </div>
+        <div class="contact-row">
+            <span class="contact-tag" data-i18n="email_label">Email</span>
+            <span>vlad.gimadiev@mail.ru</span>
+        </div>
+        <div class="contact-row">
+            <span class="contact-tag" data-i18n="phone_label">Phone</span>
+            <span>+79082439925</span>
+        </div>
+        <div class="contact-row">
+            <span class="contact-tag" data-i18n="location_label">Локация</span>
+            <span data-i18n="location">Санкт-Петербург, гибрид или удалённо, готов к релокации</span>
+        </div>
+    </div>
+
+    <!-- ===== Summary ===== -->
+    <p class="summary" data-i18n="summary">
+        Senior Frontend Developer с 4 годами коммерческого опыта. Разрабатываю клиентские web- и desktop-решения на Vue 3, TypeScript, Electron и Tauri. Проектировал frontend-архитектуру на основе Clean Architecture и Feature-Sliced Design, графовые редакторы со сложной логикой, интерфейсы визуализации потоковых данных и внутренние UI-библиотеки. На последнем проекте отвечал за архитектуру, ключевые продуктовые модули и инженерные практики frontend-команды.
+    </p>
+
+    <!-- ===== Experience ===== -->
+    <section class="section">
+        <h2 class="section-title" data-i18n="sec_experience">Опыт</h2>
+
+        <!-- SoftCom -->
+        <div class="block">
+            <div class="company-head">
+                <h3 class="company-title" data-i18n="company">ООО «СофтКом»</h3>
+                <p class="item-meta" data-i18n="company_dates">2022–2026</p>
+            </div>
+            <p class="project-intro" data-i18n="company_intro">
+                За время работы в СофтКом прошёл путь от junior fullstack-разработчика на Java и Vue до senior frontend-разработчика. Сначала занимался backend-интеграциями и административными интерфейсами, затем сфокусировался на клиентской части desktop-приложений для моделирования, графовых редакторах, потоковых данных и frontend-архитектуре.
+            </p>
+
+            <!-- Senior -->
+            <div class="role-block">
+                <div class="item-head">
+                    <h3 class="item-title" data-i18n="senior_title">Senior Frontend Developer</h3>
+                    <p class="item-meta" data-i18n="senior_dates">2025–2026</p>
+                </div>
+                <p class="item-sub" data-i18n="senior_stack">Стек: JavaScript ES6+, TypeScript, Vue 3, Composition API, Electron, Tauri, Pinia, VueFlow, Chart.js, Vuelidate, Cypress, Webpack, Vite, Docker.</p>
+                <p class="item-sub" data-i18n="senior_team">Команда: лид, 4 frontend-разработчика, 6 backend-разработчиков, 2 ручных тестировщика.</p>
+                <p class="project-intro" data-i18n="senior_intro">На senior-позиции отвечал за frontend-архитектуру, декомпозицию крупных задач, технические решения, код-ревью, онбординг новых членов команды, оценку трудоёмкости, документирование архитектурных решений, управление техническим долгом, развитие UI-библиотеки и тестовой инфраструктуры, а также проектирование API-контрактов с backend-командой. В этот период команда работала над новой универсальной системой проектирования и моделирования: продукт развивал предыдущую систему, но frontend-архитектуру собирали заново вокруг Feature-Sliced Design, Clean Architecture, независимых модулей и единого UI-слоя.</p>
+                <ul>
+                    <li data-i18n-html="senior_b1">Спроектировал frontend-архитектуру нового продукта на Vue 3 и TypeScript: выбрал кастомный подход между Clean Architecture для изоляции бизнес-логики и Feature-Sliced Design для модульности frontend-кода, адаптировал его под Composition API, Pinia и частые изменения UI. Такой каркас помог избежать лишних интерфейсов, адаптеров и жёстких правил FSD, а команда из 4 frontend-разработчиков параллельно вела 3 ключевых направления без конфликтов по границам модулей.</li>
+                    <li data-i18n-html="senior_b2">Разработал ключевые разделы проектов, требований, проектирования и моделирования на Vue 3. Эти 4 раздела закрыли базовые сценарии нового продукта и дали команде устойчивую основу для дальнейших фич без переписывания стартовой структуры.</li>
+                    <li data-i18n-html="senior_b3">Развил модуль схем на VueFlow и вместе с backend-командой перевёл обновления с PUT на PATCH. Частичные обновления снизили объём передаваемых данных, поддержали композитные блоки и ускорили сохранение схем в среднем на 30–40%.</li>
+                    <li data-i18n-html="senior_b4">Разработал в VueFlow детальный режим схем: блок раскрывался как композитный узел, параметры становились дочерними элементами, а связи отображались только между параметрами. 2-й режим помог инженерам разбирать сложные модели на уровне параметров без отдельного экрана и ручного сопоставления связей.</li>
+                    <li data-i18n-html="senior_b5">Создал и поддерживал внутреннюю библиотеку из 40+ UI-компонентов для 3 основных проектов компании. Команды переиспользовали готовые кнопки, формы и базовые элементы в похожих модулях, поэтому не собирали один и тот же интерфейс заново и сократили время на типовые UI-сценарии примерно на 20–30%.</li>
+                    <li data-i18n-html="senior_b6">Настроил компонентное тестирование в Cypress для внутренней библиотеки и добавил метрику покрытия кода. Порог не ниже 75% помогал находить проблемы в общих компонентах до попадания изменений в 3 продуктовые кодовые базы.</li>
+                    <li data-i18n-html="senior_b7">Организовал онбординг 2 стажёров через ежедневные созвоны, код-ревью и декомпозицию части своей крупной задачи на небольшие задачи под их уровень. За период провёл 150+ код-ревью, сохранил ошибку оценки трудоёмкости ниже 30%, оба стажёра прошли performance review, а команда закрыла спринт на неделю раньше.</li>
+                </ul>
+            </div>
+
+            <!-- Middle -->
+            <div class="role-block">
+                <div class="item-head">
+                    <h3 class="item-title" data-i18n="middle_title">Middle Frontend Developer</h3>
+                    <p class="item-meta" data-i18n="middle_dates">2023–2025</p>
+                </div>
+                <p class="item-sub" data-i18n="middle_stack">Стек: JavaScript ES6+, TypeScript, Vue 3, Composition API, Electron, Tauri, Pinia, Vuetify, ag-Grid, VueFlow, Chart.js, OpenLayers, WebSocket, Vuelidate, Cypress.</p>
+                <p class="item-sub" data-i18n="middle_team">Команда: лид, 3 frontend-разработчика, 5 backend-разработчиков, 2 ручных тестировщика.</p>
+                <p class="project-intro" data-i18n="middle_intro">После fullstack-этапа полностью перешёл во frontend и работал над desktop-приложением на Electron и Tauri для проектирования математической модели полёта летательного аппарата. В основном занимался графовым конструктором, live-данными моделирования, картами, графиками, большими таблицами и едиными правилами для форм.</p>
+                <ul>
+                    <li data-i18n-html="middle_b1">Разработал интерактивный конструктор схем на VueFlow с drag-and-drop блоков, соединениями, контекстным меню, настройкой параметров и undo/redo. Один модуль объединил 5 ключевых сценариев работы со схемой, поэтому пользователи собирали модель и откатывали действия без обращения к разработчикам.</li>
+                    <li data-i18n-html="middle_b2">Спроектировал сложную логику связей внутри связей через drag-and-drop. Пользователи связывали блоки и отдельные параметры на 2 уровнях модели, что помогло описывать вложенные зависимости в инженерных схемах без обходных ручных решений.</li>
+                    <li data-i18n-html="middle_b3">Настроил потоковые данные через WebSocket и live-отрисовку траекторий, точек, областей и изображений на OpenLayers-картах и Chart.js-графиках с частотой до 10 кадров в секунду. Модуль показывал 30+ визуальных метрик, поэтому инженеры разбирали ход моделирования во время расчёта, а не только по итоговому результату.</li>
+                    <li data-i18n-html="middle_b4">Перевёл табличные представления с самописных решений на ag-Grid и настроил фильтрацию, сортировку и пагинацию для массивов до 10 000+ записей. Пользователи быстрее работали с большими таблицами, а команда поддерживала один стандартный инструмент вместо набора отдельных таблиц.</li>
+                    <li data-i18n-html="middle_b5">Создал единый слой валидации форм на Vuelidate и вынес повторяющиеся правила проверки в общие функции. Команда меняла правила в 1 месте, а формы приложения одинаково показывали ошибки без копирования одинаковой логики.</li>
+                </ul>
+            </div>
+
+            <!-- Junior -->
+            <div class="role-block">
+                <div class="item-head">
+                    <h3 class="item-title" data-i18n="junior_title">Junior Fullstack Developer</h3>
+                    <p class="item-meta" data-i18n="junior_dates">2022–2023</p>
+                </div>
+                <p class="item-sub" data-i18n="junior_stack">Стек: Java, Spring, Vue 3, Element Plus, Keycloak, GitLab CI/CD, PostgreSQL.</p>
+                <p class="project-intro" data-i18n="junior_intro">Начал с корпоративной системы тестирования персонала с голосовыми ответами. Администраторы управляли компаниями-клиентами, пользователями, тарифами и сценариями опросов, а сотрудники проходили тесты по заданным правилам.</p>
+                <ul>
+                    <li data-i18n-html="junior_b1">Разработал панель администратора на Vue 3 и Element Plus для управления компаниями-клиентами, пользователями и тарифами. Один интерфейс закрыл 3 административных сценария и убрал необходимость управлять клиентскими настройками через базу или ручные операции.</li>
+                    <li data-i18n-html="junior_b2">Спроектировал и разработал конструктор сценариев тестирования на Vue 3 для 2 типов настроек, вопросов и голосовых ответов. Администраторы собирали новые опросы в интерфейсе, поэтому бизнес запускал сценарии без отдельной доработки каждого теста разработчиками.</li>
+                    <li data-i18n-html="junior_b3">Разделил монолитный репозиторий на модули и настроил отдельные GitLab CI/CD-пайплайны для каждого модуля. Разработка, сборка и релиз стали независимее, а изменения в 1 части системы меньше задевали остальные.</li>
+                    <li data-i18n-html="junior_b4">Реализовал интеграцию с API Keycloak и создание стартового администратора при первом запуске продукта. Команда разворачивала окружение с готовым базовым доступом за 1 запуск без ручной настройки учётной записи.</li>
+                    <li data-i18n-html="junior_b5">Адаптировал модуль анализа голосовых ответов и написал локальный mock-сервер на Spring. Это сняло зависимость от внешнего модуля анализа и помогло frontend- и backend-разработке идти параллельно в 2 направлениях.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Tools ===== -->
+    <section class="section">
+        <h2 class="section-title" data-i18n="sec_tools">Инструменты</h2>
+        <div class="chips">
+            <span class="chip">JavaScript ES6+</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Java</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Vue 3</span>
+            <span class="chip">Composition API</span>
+            <span class="chip">Pinia</span>
+            <span class="chip">VueFlow</span>
+            <span class="chip">Vuetify</span>
+            <span class="chip">Element Plus</span>
+            <span class="chip">Vuelidate</span>
+            <span class="chip">Chart.js</span>
+            <span class="chip">Vue Router</span>
+            <span class="chip">Vitest</span>
+            <span class="chip">ag-Grid</span>
+            <span class="chip">OpenLayers</span>
+            <span class="chip">Electron</span>
+            <span class="chip">Tauri</span>
+            <span class="chip">WebSocket</span>
+            <span class="chip">REST API</span>
+            <span class="chip">Spring</span>
+            <span class="chip">Keycloak</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Cypress</span>
+            <span class="chip">Webpack</span>
+            <span class="chip">Vite</span>
+            <span class="chip">GitLab CI/CD</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Git</span>
+        </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section class="section">
+        <h2 class="section-title" data-i18n="sec_education">Образование</h2>
+        <div class="block">
+            <div class="item-head">
+                <h3 class="item-title" data-i18n="edu_master_title">СПбГУ, Математико-механический факультет</h3>
+                <p class="item-meta" data-i18n="edu_master_dates">2021–2023</p>
+            </div>
+            <p class="item-sub" data-i18n="edu_master_sub">Магистратура, механика и математическое моделирование.</p>
+        </div>
+        <div class="block">
+            <div class="item-head">
+                <h3 class="item-title" data-i18n="edu_bachelor_title">СПбГУ, Математико-механический факультет</h3>
+                <p class="item-meta" data-i18n="edu_bachelor_dates">2017–2021</p>
+            </div>
+            <p class="item-sub" data-i18n="edu_bachelor_sub">Бакалавриат, механика и математическое моделирование.</p>
+        </div>
+    </section>
+
+    <!-- ===== Research ===== -->
+    <section class="section">
+        <h2 class="section-title" data-i18n="sec_research">Научная деятельность</h2>
+        <div class="block">
+            <ul>
+                <li data-i18n-html="research_b1">
+                    Опубликовал в составе авторского коллектива статью
+                    <a class="article-link" href="https://doi.org/10.1016/j.actaastro.2021.10.008" target="_blank" rel="noreferrer">
+                        Numerical simulation of hypersonic flow with non-equilibrium chemical reactions around sphere
+                    </a>
+                    в Acta Astronautica, Elsevier, Scopus/SJR Q1. Работа посвящена численному моделированию гиперзвукового обтекания сферы, неравновесным химическим реакциям в высокотемпературном воздухе и сопоставлению расчётов с экспериментальными данными.
+                </li>
+                <li data-i18n-html="research_b2">
+                    Опубликовал в составе авторского коллектива статью
+                    <a class="article-link" href="https://doi.org/10.26089/NumMet.v23r316" target="_blank" rel="noreferrer">
+                        Numerical simulation of hypersonic flow around semi-sphere with non-equilibrium physical and chemical processes in high-temperature air
+                    </a>
+                    в журнале «Вычислительные методы и программирование», ВАК К1, RSCI и ядро РИНЦ. Работа посвящена гиперзвуковому обтеканию полусферы, неравновесным физико-химическим процессам в высокотемпературном воздухе и расчётам для широкого диапазона чисел Маха. Относительно первой статьи добавлены результаты для более подробного состава воздуха, учтена ионизация.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== Languages ===== -->
+    <section class="section">
+        <h2 class="section-title" data-i18n="sec_languages">Языки</h2>
+        <div class="block">
+            <div class="item-head">
+                <h3 class="item-title" data-i18n="lang_en">English</h3>
+                <p class="item-meta" data-i18n="lang_en_level">B2</p>
+            </div>
+        </div>
+        <div class="block">
+            <div class="item-head">
+                <h3 class="item-title" data-i18n="lang_ru">Русский</h3>
+                <p class="item-meta" data-i18n="lang_ru_level">родной</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <div class="footer-line"></div>
+
+</article>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    // -------------------------------------------------------------------
+    // Translations
+    // -------------------------------------------------------------------
+    const translations = {
+        ru: {
+            "document_title": "Vladislav Gimadiev : CV",
+            "name": "Владислав Гимадиев",
+            "role": "Senior Frontend Developer",
+            "btn_download": "Скачать PDF",
+            "btn_lang": "English",
+            "tg_label": "TG",
+            "email_label": "Email",
+            "phone_label": "Phone",
+            "location_label": "Локация",
+            "location": "Санкт-Петербург, гибрид или удалённо, готов к релокации",
+            "summary": "Senior Frontend Developer с 4 годами коммерческого опыта. Разрабатываю клиентские web- и desktop-решения на Vue 3, TypeScript, Electron и Tauri. Проектировал frontend-архитектуру на основе Clean Architecture и Feature-Sliced Design, графовые редакторы со сложной логикой, интерфейсы визуализации потоковых данных и внутренние UI-библиотеки. На последнем проекте отвечал за архитектуру, ключевые продуктовые модули и инженерные практики frontend-команды.",
+            "sec_experience": "Опыт",
+            "company": "ООО «СофтКом»",
+            "company_dates": "2022–2026",
+            "company_intro": "За время работы в СофтКом прошёл путь от junior fullstack-разработчика на Java и Vue до senior frontend-разработчика. Сначала занимался backend-интеграциями и административными интерфейсами, затем сфокусировался на клиентской части desktop-приложений для моделирования, графовых редакторах, потоковых данных и frontend-архитектуре.",
+            "senior_title": "Senior Frontend Developer",
+            "senior_dates": "2025–2026",
+            "senior_stack": "Стек: JavaScript ES6+, TypeScript, Vue 3, Composition API, Electron, Tauri, Pinia, VueFlow, Chart.js, Vuelidate, Cypress, Webpack, Vite, Docker.",
+            "senior_team": "Команда: лид, 4 frontend-разработчика, 6 backend-разработчиков, 2 ручных тестировщика.",
+            "senior_intro": "На senior-позиции отвечал за frontend-архитектуру, декомпозицию крупных задач, технические решения, код-ревью, онбординг новых членов команды, оценку трудоёмкости, документирование архитектурных решений, управление техническим долгом, развитие UI-библиотеки и тестовой инфраструктуры, а также проектирование API-контрактов с backend-командой. В этот период команда работала над новой универсальной системой проектирования и моделирования: продукт развивал предыдущую систему, но frontend-архитектуру собирали заново вокруг Feature-Sliced Design, Clean Architecture, независимых модулей и единого UI-слоя.",
+            "senior_b1": "Спроектировал frontend-архитектуру нового продукта на Vue 3 и TypeScript: выбрал кастомный подход между Clean Architecture для изоляции бизнес-логики и Feature-Sliced Design для модульности frontend-кода, адаптировал его под Composition API, Pinia и частые изменения UI. Такой каркас помог избежать лишних интерфейсов, адаптеров и жёстких правил FSD, а команда из 4 frontend-разработчиков параллельно вела 3 ключевых направления без конфликтов по границам модулей.",
+            "senior_b2": "Разработал ключевые разделы проектов, требований, проектирования и моделирования на Vue 3. Эти 4 раздела закрыли базовые сценарии нового продукта и дали команде устойчивую основу для дальнейших фич без переписывания стартовой структуры.",
+            "senior_b3": "Развил модуль схем на VueFlow и вместе с backend-командой перевёл обновления с PUT на PATCH. Частичные обновления снизили объём передаваемых данных, поддержали композитные блоки и ускорили сохранение схем в среднем на 30–40%.",
+            "senior_b4": "Разработал в VueFlow детальный режим схем: блок раскрывался как композитный узел, параметры становились дочерними элементами, а связи отображались только между параметрами. 2-й режим помог инженерам разбирать сложные модели на уровне параметров без отдельного экрана и ручного сопоставления связей.",
+            "senior_b5": "Создал и поддерживал внутреннюю библиотеку из 40+ UI-компонентов для 3 основных проектов компании. Команды переиспользовали готовые кнопки, формы и базовые элементы в похожих модулях, поэтому не собирали один и тот же интерфейс заново и сократили время на типовые UI-сценарии примерно на 20–30%.",
+            "senior_b6": "Настроил компонентное тестирование в Cypress для внутренней библиотеки и добавил метрику покрытия кода. Порог не ниже 75% помогал находить проблемы в общих компонентах до попадания изменений в 3 продуктовые кодовые базы.",
+            "senior_b7": "Организовал онбординг 2 стажёров через ежедневные созвоны, код-ревью и декомпозицию части своей крупной задачи на небольшие задачи под их уровень. За период провёл 150+ код-ревью, сохранил ошибку оценки трудоёмкости ниже 30%, оба стажёра прошли performance review, а команда закрыла спринт на неделю раньше.",
+            "middle_title": "Middle Frontend Developer",
+            "middle_dates": "2023–2025",
+            "middle_stack": "Стек: JavaScript ES6+, TypeScript, Vue 3, Composition API, Electron, Tauri, Pinia, Vuetify, ag-Grid, VueFlow, Chart.js, OpenLayers, WebSocket, Vuelidate, Cypress.",
+            "middle_team": "Команда: лид, 3 frontend-разработчика, 5 backend-разработчиков, 2 ручных тестировщика.",
+            "middle_intro": "После fullstack-этапа полностью перешёл во frontend и работал над desktop-приложением на Electron и Tauri для проектирования математической модели полёта летательного аппарата. В основном занимался графовым конструктором, live-данными моделирования, картами, графиками, большими таблицами и едиными правилами для форм.",
+            "middle_b1": "Разработал интерактивный конструктор схем на VueFlow с drag-and-drop блоков, соединениями, контекстным меню, настройкой параметров и undo/redo. Один модуль объединил 5 ключевых сценариев работы со схемой, поэтому пользователи собирали модель и откатывали действия без обращения к разработчикам.",
+            "middle_b2": "Спроектировал сложную логику связей внутри связей через drag-and-drop. Пользователи связывали блоки и отдельные параметры на 2 уровнях модели, что помогло описывать вложенные зависимости в инженерных схемах без обходных ручных решений.",
+            "middle_b3": "Настроил потоковые данные через WebSocket и live-отрисовку траекторий, точек, областей и изображений на OpenLayers-картах и Chart.js-графиках с частотой до 10 кадров в секунду. Модуль показывал 30+ визуальных метрик, поэтому инженеры разбирали ход моделирования во время расчёта, а не только по итоговому результату.",
+            "middle_b4": "Перевёл табличные представления с самописных решений на ag-Grid и настроил фильтрацию, сортировку и пагинацию для массивов до 10 000+ записей. Пользователи быстрее работали с большими таблицами, а команда поддерживала один стандартный инструмент вместо набора отдельных таблиц.",
+            "middle_b5": "Создал единый слой валидации форм на Vuelidate и вынес повторяющиеся правила проверки в общие функции. Команда меняла правила в 1 месте, а формы приложения одинаково показывали ошибки без копирования одинаковой логики.",
+            "junior_title": "Junior Fullstack Developer",
+            "junior_dates": "2022–2023",
+            "junior_stack": "Stack: Java, Spring, Vue 3, Element Plus, Keycloak, GitLab CI/CD, PostgreSQL.",
+            "junior_intro": "Начал с корпоративной системы тестирования персонала с голосовыми ответами. Администраторы управляли компаниями-клиентами, пользователями, тарифами и сценариями опросов, а сотрудники проходили тесты по заданным правилам.",
+            "junior_b1": "Разработал панель администратора на Vue 3 и Element Plus для управления компаниями-клиентами, пользователями и тарифами. Один интерфейс закрыл 3 административных сценария и убрал необходимость управлять клиентскими настройками через базу или ручные операции.",
+            "junior_b2": "Спроектировал и разработал конструктор сценариев тестирования на Vue 3 для 2 типов настроек, вопросов и голосовых ответов. Администраторы собирали новые опросы в интерфейсе, поэтому бизнес запускал сценарии без отдельной доработки каждого теста разработчиками.",
+            "junior_b3": "Разделил монолитный репозиторий на модули и настроил отдельные GitLab CI/CD-пайплайны для каждого модуля. Разработка, сборка и релиз стали независимее, а изменения в 1 части системы меньше задевали остальные.",
+            "junior_b4": "Реализовал интеграцию с API Keycloak и создание стартового администратора при первом запуске продукта. Команда разворачивала окружение с готовым базовым доступом за 1 запуск без ручной настройки учётной записи.",
+            "junior_b5": "Адаптировал модуль анализа голосовых ответов и написал локальный mock-сервер на Spring. Это сняло зависимость от внешнего модуля анализа и помогло frontend- и backend-разработке идти параллельно в 2 направлениях.",
+            "sec_tools": "Инструменты",
+            "sec_education": "Образование",
+            "edu_master_title": "СПбГУ, Математико-механический факультет",
+            "edu_master_dates": "2021–2023",
+            "edu_master_sub": "Магистратура, механика и математическое моделирование.",
+            "edu_bachelor_title": "СПбГУ, Математико-механический факультет",
+            "edu_bachelor_dates": "2017–2021",
+            "edu_bachelor_sub": "Бакалавриат, механика и математическое моделирование.",
+            "sec_research": "Научная деятельность",
+            "research_b1": "Опубликовал в составе авторского коллектива статью <a class=\"article-link\" href=\"https://doi.org/10.1016/j.actaastro.2021.10.008\" target=\"_blank\" rel=\"noreferrer\">Numerical simulation of hypersonic flow with non-equilibrium chemical reactions around sphere</a> в Acta Astronautica, Elsevier, Scopus/SJR Q1. Работа посвящена численному моделированию гиперзвукового обтекания сферы, неравновесным химическим реакциям в высокотемпературном воздухе и сопоставлению расчётов с экспериментальными данными.",
+            "research_b2": "Опубликовал в составе авторского коллектива статью <a class=\"article-link\" href=\"https://doi.org/10.26089/NumMet.v23r316\" target=\"_blank\" rel=\"noreferrer\">Numerical simulation of hypersonic flow around semi-sphere with non-equilibrium physical and chemical processes in high-temperature air</a> в журнале «Вычислительные методы и программирование», ВАК К1, RSCI и ядро РИНЦ. Работа посвящена гиперзвуковому обтеканию полусферы, неравновесным физико-химическим процессам в высокотемпературном воздухе и расчётам для широкого диапазона чисел Маха. Относительно первой статьи добавлены результаты для более подробного состава воздуха, учтена ионизация.",
+            "sec_languages": "Языки",
+            "lang_en": "English",
+            "lang_en_level": "B2",
+            "lang_ru": "Русский",
+            "lang_ru_level": "родной"
+        },
+        en: {
+            "document_title": "Vladislav Gimadiev : CV",
+            "name": "Владислав Гимадиев",
+            "role": "Senior Frontend Developer",
+            "btn_download": "Download PDF",
+            "btn_lang": "Русский",
+            "tg_label": "TG",
+            "email_label": "Email",
+            "phone_label": "Phone",
+            "location_label": "Location",
+            "location": "Saint Petersburg, hybrid or remote, open to relocation",
+            "summary": "Senior Frontend Developer with 4 years of commercial experience. I build client-side web and desktop products with Vue 3, TypeScript, Electron, and Tauri. I designed frontend architecture based on Clean Architecture and Feature-Sliced Design, graph editors with complex logic, streaming-data visualization interfaces, and internal UI libraries. On the latest project, I was responsible for architecture, key product modules, and frontend engineering practices.",
+            "sec_experience": "Experience",
+            "company": "SoftCom LLC",
+            "company_dates": "2022–2026",
+            "company_intro": "During my time at SoftCom, I grew from a junior fullstack developer on Java and Vue to a senior frontend developer. I first worked on backend integrations and admin interfaces, then focused on the client side of desktop modeling applications, graph editors, streaming data, and frontend architecture.",
+            "senior_title": "Senior Frontend Developer",
+            "senior_dates": "2025–2026",
+            "senior_stack": "Stack: JavaScript ES6+, TypeScript, Vue 3, Composition API, Electron, Tauri, Pinia, VueFlow, Chart.js, Vuelidate, Cypress, Webpack, Vite, Docker.",
+            "senior_team": "Team: lead, 4 frontend developers, 6 backend developers, 2 manual QA engineers.",
+            "senior_intro": "As a senior developer, I was responsible for frontend architecture, decomposition of large tasks, technical decisions, code reviews, onboarding new team members, effort estimation, architecture decision documentation, technical debt management, development of the UI library and test infrastructure, and API contract design with the backend team. During this period, the team worked on a new universal design and modeling system: the product evolved the previous system, but the frontend architecture was rebuilt around Feature-Sliced Design, Clean Architecture, independent modules, and a shared UI layer.",
+            "senior_b1": "Designed the frontend architecture of the new product on Vue 3 and TypeScript: chose a custom approach between Clean Architecture for business-logic isolation and Feature-Sliced Design for frontend modularity, then adapted it to Composition API, Pinia, and frequent UI changes. This structure avoided excessive interfaces, adapters, and rigid FSD rules, while a team of 4 frontend developers worked in parallel across 3 key areas without conflicts around module boundaries.",
+            "senior_b2": "Built the key sections for projects, requirements, design, and modeling on Vue 3. These 4 sections covered the core product scenarios and gave the team a stable foundation for future features without rewriting the initial structure.",
+            "senior_b3": "Developed the schema module on VueFlow and worked with the backend team to move updates from PUT to PATCH. Partial updates reduced transmitted data, supported composite blocks, and improved average schema save time by 30–40%.",
+            "senior_b4": "Built a detailed schema mode in VueFlow where a block opened as a composite node, its parameters became child elements, and links were shown only between parameters. The 2nd display mode helped engineers inspect complex models at the parameter level without a separate screen or manual link matching.",
+            "senior_b5": "Created and maintained an internal library of 40+ UI components for 3 main company projects. Teams reused ready-made buttons, forms, and base elements in similar modules, so they did not rebuild the same interface and reduced time on typical UI scenarios by about 20–30%.",
+            "senior_b6": "Set up component testing in Cypress for the internal library and added a code coverage metric. A threshold of at least 75% helped catch issues in shared components before changes reached 3 product codebases.",
+            "senior_b7": "Organized onboarding for 2 interns through daily calls, code reviews, and decomposition of part of my large task into smaller tasks suitable for their level. Over the period, I completed 150+ code reviews, kept estimation error below 30%, both interns passed performance review, and the team closed the sprint a week earlier.",
+            "middle_title": "Middle Frontend Developer",
+            "middle_dates": "2023–2025",
+            "middle_stack": "Stack: JavaScript ES6+, TypeScript, Vue 3, Composition API, Electron, Tauri, Pinia, Vuetify, ag-Grid, VueFlow, Chart.js, OpenLayers, WebSocket, Vuelidate, Cypress.",
+            "middle_team": "Team: lead, 3 frontend developers, 5 backend developers, 2 manual QA engineers.",
+            "middle_intro": "After the fullstack stage, I fully moved into frontend and worked on a desktop application on Electron and Tauri for designing a mathematical flight model of an aircraft. I mainly worked on the graph constructor, live simulation data, maps, charts, large tables, and common rules for forms.",
+            "middle_b1": "Built an interactive schema constructor on VueFlow with drag-and-drop blocks, connections, a context menu, parameter settings, and undo/redo. One module combined 5 key schema workflows, so users assembled the model and rolled back actions without developer support.",
+            "middle_b2": "Designed complex connection-inside-connection logic through drag-and-drop. Users connected blocks and individual parameters across 2 model levels, which helped describe nested dependencies in engineering schemas without manual workarounds.",
+            "middle_b3": "Set up streaming data through WebSocket and live rendering of trajectories, points, areas, and images on OpenLayers maps and Chart.js charts at up to 10 frames per second. The module displayed 30+ visual metrics, so engineers analyzed the simulation while it was running, not only after the final result.",
+            "middle_b4": "Migrated table views from custom implementations to ag-Grid and configured filtering, sorting, and pagination for datasets of up to 10,000+ records. Users worked faster with large tables, and the team maintained one standard tool instead of a set of separate table implementations.",
+            "middle_b5": "Created a unified form validation layer on Vuelidate and moved repeated validation rules into shared functions. The team changed rules in 1 place, and application forms displayed errors consistently without duplicated logic.",
+            "junior_title": "Junior Fullstack Developer",
+            "junior_dates": "2022–2023",
+            "junior_stack": "Stack: Java, Spring, Vue 3, Element Plus, Keycloak, GitLab CI/CD, PostgreSQL.",
+            "junior_intro": "Started with an enterprise employee testing system with voice answers. Administrators managed client companies, users, tariffs, and survey scenarios, while employees took tests according to configured rules.",
+            "junior_b1": "Built an admin panel on Vue 3 and Element Plus for managing client companies, users, and tariffs. One interface covered 3 administrative workflows and removed the need to manage client settings through the database or manual operations.",
+            "junior_b2": "Designed and built a survey scenario builder on Vue 3 for 2 setting types, questions and voice answers. Administrators assembled new surveys in the interface, so the business launched scenarios without separate developer changes for each test.",
+            "junior_b3": "Split the monolithic repository into modules and set up separate GitLab CI/CD pipelines for each module. Development, builds, and releases became more independent, and changes in 1 part of the system affected the rest less often.",
+            "junior_b4": "Implemented integration with the Keycloak API and creation of the initial administrator on the first product launch. The team deployed an environment with basic access ready in 1 launch without manual account setup.",
+            "junior_b5": "Adapted the voice-answer analysis module and wrote a local mock server on Spring. This removed dependence on the external analysis module and helped frontend and backend development continue in 2 parallel tracks.",
+            "sec_tools": "Tools",
+            "sec_education": "Education",
+            "edu_master_title": "Saint Petersburg State University, Faculty of Mathematics and Mechanics",
+            "edu_master_dates": "2021–2023",
+            "edu_master_sub": "Master’s degree, Mechanics and Mathematical Modeling.",
+            "edu_bachelor_title": "Saint Petersburg State University, Faculty of Mathematics and Mechanics",
+            "edu_bachelor_dates": "2017–2021",
+            "edu_bachelor_sub": "Bachelor’s degree, Mechanics and Mathematical Modeling.",
+            "sec_research": "Research",
+            "research_b1": "Co-authored the paper <a class=\"article-link\" href=\"https://doi.org/10.1016/j.actaastro.2021.10.008\" target=\"_blank\" rel=\"noreferrer\">Numerical simulation of hypersonic flow with non-equilibrium chemical reactions around sphere</a> in Acta Astronautica, Elsevier, Scopus/SJR Q1. The work focuses on numerical simulation of hypersonic flow around a sphere, non-equilibrium chemical reactions in high-temperature air, and comparison of numerical results with experimental data.",
+            "research_b2": "Co-authored the paper <a class=\"article-link\" href=\"https://doi.org/10.26089/NumMet.v23r316\" target=\"_blank\" rel=\"noreferrer\">Numerical simulation of hypersonic flow around semi-sphere with non-equilibrium physical and chemical processes in high-temperature air</a> in Numerical Methods and Programming, VAK K1, RSCI, and Russian Science Citation Index core. The work focuses on hypersonic flow around a semi-sphere, non-equilibrium physical and chemical processes in high-temperature air, and calculations across a wide Mach number range. Compared with the first paper, it adds results for a more detailed air composition and accounts for ionization.",
+            "sec_languages": "Languages",
+            "lang_en": "English",
+            "lang_en_level": "B2",
+            "lang_ru": "Russian",
+            "lang_ru_level": "native"
+        }
+    };
+
+    // -------------------------------------------------------------------
+    // Apply Russian typography (non‑breaking spaces for short words)
+    // -------------------------------------------------------------------
+    const selectorsForTypography = [
+        '.summary',
+        '.small',
+        '.item-sub',
+        'li',
+        '.project-intro'
+    ];
+
+    function applyRuTypography() {
+        const shortWords = ['а', 'и', 'в', 'во', 'к', 'ко', 'с', 'со', 'у', 'о', 'об', 'обо', 'по', 'за', 'из', 'от', 'до', 'на', 'но', 'не', 'для', 'при', 'под', 'над', 'без'];
+        const re = new RegExp('(^|[\\s\\u00A0(«"])((' + shortWords.join('|') + '))(\\s+)', 'gmi');
+
+        function fixText(text) {
+            return text.replace(re, function(match, before, word) {
+                return before + word + '\u00A0';
+            });
+        }
+
+        function walk(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                node.nodeValue = fixText(node.nodeValue);
+                return;
+            }
+            if (node.nodeType === Node.ELEMENT_NODE) {
+                if (['SCRIPT', 'STYLE', 'BUTTON'].includes(node.tagName)) return;
+                node.childNodes.forEach(walk);
+            }
+        }
+
+        document.querySelectorAll(selectorsForTypography.join(', ')).forEach(walk);
+    }
+
+    // -------------------------------------------------------------------
+    // Set language
+    // -------------------------------------------------------------------
+    function setLanguage(lang) {
+        const dict = translations[lang];
+        document.documentElement.lang = lang;
+        document.title = dict.document_title;
+
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key] !== undefined) {
+                el.textContent = dict[key];
+            }
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+            const key = el.getAttribute('data-i18n-html');
+            if (dict[key] !== undefined) {
+                el.innerHTML = dict[key];
+            }
+        });
+
+        document.getElementById('langToggle').textContent = dict.btn_lang;
+        document.getElementById('pdfDownloadBtn').textContent = dict.btn_download;
+
+        if (lang === 'ru') {
+            applyRuTypography();
+        }
+    }
+
+    // -------------------------------------------------------------------
+    // Event listeners
+    // -------------------------------------------------------------------
+    document.getElementById('pdfDownloadBtn').addEventListener('click', function() {
+        window.print();
+    });
+
+    document.getElementById('langToggle').addEventListener('click', function() {
+        var next = document.documentElement.lang === 'ru' ? 'en' : 'ru';
+        setLanguage(next);
+    });
+
+    // -------------------------------------------------------------------
+    // Initial language (Russian)
+    // -------------------------------------------------------------------
+    setLanguage('ru');
+</script>
+
+</body>
+</html>
